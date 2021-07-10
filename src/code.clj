@@ -11,17 +11,17 @@
     :link "https://parkside.app/#/"
     :title "Senior Software Engineer"
     :bullets ["Brought my family to CA to align time zones"
-              "Responsible for requirement breakdown & delivery of parts of the stock trading system composed of Clojure based microservices."
+              "Responsible for requirement breakdown & delivery of parts of the stock trading system composed of Clojure based micro services."
               "Stack" ["Datomic"
                        "QuickFIX/J"
                        "Kafka"
                        "Graphql"
                        "ClojureScript"]
-              "Onboarded Multiple developer and QAs"
+              "On boarded Multiple developer and QAs"
               "Developed an internal tool to ingest kafka messages and make them queriable with datalog using crux"
               "One of the oldest devs involved including the time during freelance"
               ["Saw the company grow from few people to ~20 developers"
-               "Survived RIF that happened in the middle of funding roundes"]]}
+               "Survived RIF that happened in the middle of funding rounds"]]}
    {:place "Clojurists Together"
     :duration "May 2021 ~ Present"
     :link "https://www.clojuriststogether.org/"
