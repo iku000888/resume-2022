@@ -21,12 +21,25 @@
               "One of the oldest devs involved including the time during freelance"
               ["Saw the company grow from few people to ~20 developers"
                "Survived RIF that happened in the middle of funding roundes"]]}
+   {:place "Clojurists Together"
+    :duration "May 2021 ~ Present"
+    :link "https://www.clojuriststogether.org/"
+    :title "Board Member"
+    :bullets ["Elected as member via election to serve the broad Clojure Community"
+              "Discuss and vote on which open source projects are to be funded"]}
+   {:place "Youtube Channel Host"
+    :duration "Jan 2021 ~ Present"
+    :link "https://www.youtube.com/channel/UC4wTwYzpaL7yKWHOKlUpwJQ"
+    :bullets ["Discuss Clojure Stuff"
+              "Majority of Episodes in Japanese"
+              "~2k total views/200 watch hours/70 Subscribers"]}
    {:place "Freelance Developer"
     :duration "October 2017 - May 2019"
     :location "Japan"
     :title "Multiple Part Time Roles at multiple places"
     :bullets ["Sales/Frontend Development for physical retail trafic analytics product at Locarise"
               "Web Development for bioinformatics products at Xcoo"
+              ["Ongoing partial engagements"]
               "React Native development (with ClojureScript) at LiME inc"
               "Backend Development at Parkside Technologies (Current Employer)"]}
    {:place "Toyokumo (Formerly Cybozu Startups)"
@@ -52,9 +65,10 @@
               "Research topic: Make a robotic arm drill a tooth"]}])
 (comment (update))
 (defn ul-list [bts]
-  (if (coll? bts)
-    [:ul (map ul-list bts)]
-    [:li bts]))
+  (cond
+    (keyword? (first bts)) [:li bts]
+    (coll? bts) [:ul (map ul-list bts)]
+    :else [:li bts]))
 
 (def work-history
   (->> history
@@ -63,13 +77,55 @@
               [:div.card.col-6.col #_{:style "width: 20rem"}
                [:div.card-body
                 [:h4.card-title place]
-                [:p.card-text location " / " duration " " (when link [:a {:href link} "[link]"])]
+                [:p.card-text
+                 location (when location " / ")
+                 duration " " (when link [:a {:href link} "[link]"])]
                 [:h5 title]
                 (when bullets
                   (ul-list bullets))]]))
        (partition-all 2)
        (map (fn [entries]
               [:div.row entries]))))
+(comment (update))
+(def compentency
+  [:div.row
+   [:div.card.col-4.col
+    [:h4.card-title "Clojure"]
+    (ul-list
+     ["5 years using it with <3 professionally"
+      ["Traditional Web App Backend"
+       "Graphql APIs with Lacinia"
+       "Kafka Streams Apps"
+       "Babashka Scripts"]])]
+   [:div.card.col-4.col
+    [:h4.card-title "ClojureScript"]
+    (ul-list
+     ["5 years using it with <3 professionally"
+      ["Can develop a Reagent Based SPA from scratch with routing and a npm hosted component framework"
+       "Complicated geometric UI features with SVGs"
+       "Some limited time developing features for a React Narive Apps(re-natal)"]])]
+   [:div.card.col-4.col
+    [:h4.card-title "Datomic"]
+    (ul-list
+     ["Write applications that use dynamic queries joining across multiple entities"
+      "Worked on query perf investigation"])]
+   [:div.card.col-4.col
+    [:h4.card-title "Mentoring/Onboarding"]
+    (ul-list
+     ["Have been a goto onboarding buddy for newcomers at Parkside"
+      "Introduce tech stack/domain knowledge that is relevant to the first several task assigned"
+      "Alternate between hands on and hands off time"])]
+   [:div.card.col-4.col
+    [:h4.card-title "Documentation/Presentations"]
+    (ul-list
+     ["Create concise, high value documentation of features developed"
+      "Collaborate with PMs on feature demos for wider audiences"
+      "Clearly communicate what the work was done to facilitate efficient QA"])]
+   [:div.card.col-4.col
+    [:h4.card-title "Japanese"]
+    (ul-list
+     ["Native speaker"
+      "Have performed roles as Interpreter/Translator"])]])
 
 (defn handler [req]
   {:status 200
@@ -88,13 +144,25 @@
             [:input {:id "tab2" :type "radio" :name "tabs"}]
             [:label {:for "tab2"} "Competencies"]
 
-            [:input {:id "tab2" :type "radio" :name "tabs"}]
-            [:label {:for "tab2"} "Contact Info"]
+            [:input {:id "tab3" :type "radio" :name "tabs"}]
+            [:label {:for "tab3"} "Contacts/Online Presence"]
 
             [:div.content {:id "content1"}
              work-history]
             [:div.content {:id "content2"}
-             "Bar"]]])})
+             compentency]
+            [:div.content {:id "content3"}
+             (ul-list
+              [[:a {:href "https://www.linkedin.com/in/ikuru-kanuma-bb83496a/"}
+                "LinkedIn"]
+               [:a {:href "https://github.com/iku000888/"}
+                "Github"]
+               [:a {:href "https://twitter.com/iku000888"}
+                "Twitter"]
+               [:a {:href "https://scrapbox.io/iku000888-notes/"}
+                "Notes"]
+               "Email"
+               ["kanumaiku@gmail.com"]])]]])})
 
 (defn update []
   (swap! state assoc ::handler handler))
