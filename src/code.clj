@@ -121,7 +121,7 @@
       "Introduce tech stack/domain knowledge that is relevant to the first several task assigned"
       "Alternate between hands on and hands off time"])]
    [:div.card.col-4.col
-    [:h4.card-title "Documentation/Presentations"]
+    [:h4.card-title "Documentation & Presentations"]
     (ul-list
      ["Create concise, high value documentation of features developed"
       "Collaborate with PMs on feature demos for wider audiences"
