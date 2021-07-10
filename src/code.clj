@@ -10,7 +10,8 @@
     :location  "San Francisco, CA"
     :link "https://parkside.app/#/"
     :title "Senior Software Engineer"
-    :bullets ["Responsible for requirement breakdown & delivery of parts of the stock trading system composed of Clojure based microservices."
+    :bullets ["Brought my family to CA to align time zones"
+              "Responsible for requirement breakdown & delivery of parts of the stock trading system composed of Clojure based microservices."
               "Stack" ["Datomic"
                        "QuickFIX/J"
                        "Kafka"
@@ -33,6 +34,10 @@
     :bullets ["Discuss Clojure Stuff"
               "Majority of Episodes in Japanese"
               "~2k total views/200 watch hours/70 Subscribers"]}
+   {:place "Husband/Parent of 3"
+    :duration "2013 ~ Present"
+    :bullets ["Moved to Japan right after college to be with my wife who already had a career there"
+              "Have children born in 2015/2016/2020"]}
    {:place "Freelance Developer"
     :duration "October 2017 - May 2019"
     :location "Japan"
@@ -136,7 +141,10 @@
            [:meta {:http-equiv "X-UA-Compatible" :content "ie=edge"}]
            [:link {:rel "stylesheet" :href "https://unpkg.com/papercss@1.8.2/dist/paper.min.css"}]]
           [:div.paper.container
-           [:h1 {:style "text-align: center"}"Ikuru Leif Kyogoku"]
+           [:h1 {:style "text-align: center"}
+            "Ikuru Leif Kyogoku"]
+           [:p {:style "text-align: center"}
+            "A motivated, authentic Clojure/ClojureScript developer based in Mountain View, CA"]
            [:div.row.flex-spaces.tabs
             [:input {:id "tab1" :type "radio" :name "tabs" :checked true}]
             [:label {:for "tab1"} "Work/Education History"]
