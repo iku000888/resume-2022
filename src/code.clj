@@ -20,8 +20,8 @@
               "On boarded Multiple developer and QAs"
               "Developed an internal tool to ingest kafka messages and make them queriable with datalog using crux"
               "One of the oldest devs involved including the time during freelance"
-              ["Saw the company grow from few people to ~30 developers"
-               "Open to work due to furlough"]]}
+              ["Saw the company grow from few people to ~30 developers"]
+              "Open to work due to furlough"]}
    {:place "Clojurists Together"
     :duration "May 2021 ~ Present"
     :link "https://www.clojuriststogether.org/"
@@ -97,7 +97,7 @@
    [:div.card.col-4.col
     [:h4.card-title "Clojure"]
     (ul-list
-     ["5 years using it with <3 professionally"
+     ["5+ years using it with <3 professionally"
       ["Traditional Web App Backend"
        "Graphql APIs with Lacinia"
        "Kafka Streams Apps"
@@ -105,15 +105,24 @@
    [:div.card.col-4.col
     [:h4.card-title "ClojureScript"]
     (ul-list
-     ["5 years using it with <3 professionally"
+     ["5+ years using it with <3 professionally"
       ["Can develop a Reagent Based SPA from scratch with routing and a npm hosted component framework"
-       "Complicated geometric UI features with SVGs"
+       "Developed complicated geometric UI features with SVGs"
        "Some limited time developing features for a React Narive Apps(re-natal)"]])]
    [:div.card.col-4.col
     [:h4.card-title "Datomic"]
     (ul-list
      ["Write applications that use dynamic queries joining across multiple entities"
       "Worked on query perf investigation"])]
+   [:div.card.col-4.col
+    [:h4.card-title "Kafka"]
+    (ul-list
+     ["Write kafka-streams applications involving"
+      ["Several input/output topics"
+       "Non trivial joins"
+       "State store operations"]
+      "Troubleshoot subtle coordination/timing issues"
+      "Lead incident responses on Confluent clould related issues"])]
    [:div.card.col-4.col
     [:h4.card-title "Mentoring/Onboarding"]
     (ul-list
@@ -190,4 +199,5 @@
                                       :join? false})))))))
 
 (comment
-  (serve))
+  (serve)
+  (update))
