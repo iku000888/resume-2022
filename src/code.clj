@@ -113,7 +113,8 @@
     [:h4.card-title "Datomic"]
     (ul-list
      ["Write applications that use dynamic queries joining across multiple entities"
-      "Worked on query perf investigation"])]
+      "Worked on query perf investigation"
+      "Took on support case communication around client library bugs and development questions"])]
    [:div.card.col-4.col
     [:h4.card-title "Kafka"]
     (ul-list
@@ -197,7 +198,8 @@
                                        ((::handler @state) r))
                                      {:port 12000
                                       :join? false})))))))
+(update)
 
 (comment
   (serve)
-  (update))
+  )
